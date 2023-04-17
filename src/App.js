@@ -2,6 +2,7 @@
 import './App.css';
 import Categories from './components/Categories';
 import Navbar from './components/Navbar';
+import OfferCarousel from './components/OfferCarousel';
 import Product from './components/Product';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Categories />
+      <OfferCarousel />
       <Product />
     </div>
   );
