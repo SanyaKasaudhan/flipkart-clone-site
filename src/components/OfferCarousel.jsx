@@ -13,19 +13,17 @@ const OfferCarousel = () => {
   };
 
   const searchText = [
-"https://www.shutterstock.com/image-vector/blueberry-yogurt-ads-delicious-commercial-600w-1023594961.jpg",
-"https://www.shutterstock.com/image-vector/strawberry-ice-cream-sandwich-wafer-600w-1090844753.jpg",
-"https://www.shutterstock.com/image-vector/smartphone-tablet-laptop-smartwatch-headphones-600w-1641619534.jpg",
-"https://www.shutterstock.com/image-vector/beauty-make-banner-template-cosmetic-600w-1927734332.jpg",
-"https://www.shutterstock.com/image-vector/strawberry-yogurt-ads-milk-fruit-600w-1096790909.jpg",
-"https://www.shutterstock.com/image-vector/web-site-landing-page-3d-600w-1934575964.jpg",
-"https://www.shutterstock.com/image-vector/web-page-design-grocery-store-600w-1445961677.jpg",
+    "https://rukminim1.flixcart.com/fk-p-flap/3376/560/image/fef1c23137a2e722.jpg?q=50",
+    "https://rukminim1.flixcart.com/fk-p-flap/3376/560/image/e1ccefe674a248d6.jpg?q=50",
+    "https://rukminim1.flixcart.com/fk-p-flap/3376/560/image/35db29f2b0267c6c.jpg?q=50",
+    "https://rukminim1.flixcart.com/fk-p-flap/3376/560/image/ae4617aaed68ec83.jpg?q=50",
+    "https://rukminim1.flixcart.com/fk-p-flap/3376/560/image/bce1333cb44de608.jpg?q=50",
 
   ];
 
   return (
     <div className="relative ">
-      <div className="mx-auto pt-5 w-[750px] px-6">
+      <div className="mx-auto w-full ">
         <Slider {...settings}>
           {searchText.map((item) => (
             <div className=""  key={item}>
@@ -34,16 +32,14 @@ const OfferCarousel = () => {
           ))}
         </Slider>
         <style jsx>{`
+
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+      background-color: #537a09;
+}
           .slick-prev:before,
           .slick-next:before {
-            color: orange;
+            color: #d5f0a3;
           }
-
-          .slick-prev:hover,
-          .slick-next:hover {
-            background-color: #dfa4f5;
-          }
-
           .slick-prev,
           .slick-next {
             position: absolute;
@@ -52,18 +48,21 @@ const OfferCarousel = () => {
             transform: translateY(-50%);
             width: 40px;
             height: 40px;
-            background-color: purple;
+            background-color: #537a09;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
           }
           .slick-prev {
-            top: 100px;
-            left: -70px;
+            top: 120px;
+            left: 0px;
           }
           .slick-next {            
-            top: 100px;
-            right: 30px;
+            top: 120px;
+            right: 0px;
           }
         `}</style>
+      </div>
+      <div>
+        <img className="w-screen shadow-lg" src="https://rukminim1.flixcart.com/fk-p-flap/2000/2000/image/31bc5f75424dd33c.jpg?q=50" />
       </div>
     </div>
   );
