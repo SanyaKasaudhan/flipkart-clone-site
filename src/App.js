@@ -1,19 +1,26 @@
 
 import './App.css';
-import Categories from './components/Categories';
-import ItemCard from './components/ItemCard';
-import Navbar from './components/Navbar';
-import OfferCarousel from './components/OfferCarousel';
-import Product from './components/Product';
 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Provider } from 'react-redux';
+import HomePage from './components/HomePage';
+import Cart from './components/Cart';
+
+
+const appRouter = createBrowserRouter([
+  {
+    path:"/",
+    element: <HomePage />
+  },
+  {
+    path:"/",
+    element: <Cart />
+  }
+])
 function App() {
   return (
     <div className="bg-slate-100">
-      <Navbar />
-      <Categories />
-      <OfferCarousel />
-      <ItemCard />
-      <Product />
+      <RouterProvider router={appRouter} />
     </div>
   );
 }
