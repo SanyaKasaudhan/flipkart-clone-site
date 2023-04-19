@@ -5,6 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from 'react-redux';
 import HomePage from './components/HomePage';
 import Cart from './components/Cart';
+import ItemCard from './components/ItemCard';
+import ItemCardNavigate from './components/ItemCardNavigate';
 
 
 const appRouter = createBrowserRouter([
@@ -15,6 +17,14 @@ const appRouter = createBrowserRouter([
   {
     path:"/",
     element: <Cart />
+  },
+  {
+    path: "/product",
+    element: <ItemCard />
+  },
+  {
+    path: "/product/:id",
+    element: <ItemCardNavigate />
   }
 ])
 function App() {
