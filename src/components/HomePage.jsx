@@ -9,7 +9,7 @@ import Product from './Product';
 const HomePage = () => {
   return (
     <div>
-    <Navbar />
+      <Navbar />
       <Categories />
       <OfferCarousel />
       <ItemCard />

@@ -7,6 +7,7 @@ import HomePage from './components/HomePage';
 import Cart from './components/Cart';
 import ItemCard from './components/ItemCard';
 import ItemCardNavigate from './components/ItemCardNavigate';
+import Navbar from './components/Navbar';
 
 
 const appRouter = createBrowserRouter([
@@ -15,7 +16,7 @@ const appRouter = createBrowserRouter([
     element: <HomePage />
   },
   {
-    path:"/",
+    path:"/cart",
     element: <Cart />
   },
   {
