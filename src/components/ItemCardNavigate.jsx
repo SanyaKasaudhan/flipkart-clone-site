@@ -11,9 +11,12 @@ const ItemCardNavigate = () => {
     if(!product)
         return <>Loading.....</>
   return (
-    <div>
-        <div>
+    <div className=''>
+        <div className='flex'>
+            <div className=' flex-row'>
             <img src={product.thumbnail} alt="product_img"/>
+            </div>
+            <div className=''>
             <div>{product.title}</div>
             <div>{product.description}</div>
             
@@ -21,6 +24,7 @@ const ItemCardNavigate = () => {
             <div>{product.discountPercentage}</div>
             <div>Rs. {product.price}</div>
             <div>Rating {product.rating}</div>
+            </div>
         </div>
     </div>
   )
