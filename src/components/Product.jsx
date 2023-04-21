@@ -11,13 +11,15 @@ const Product = () => {
           .then((res) => setProduct(res.products))
           .catch((err) => console.log(err));
       }, []);
+//smartphones laptops fragrances skincare motorcycle sunglasses automotive lighting 
+// womens-bags womens-jewellery
 
       console.log("pr",product)
   return (<>
     <div>Product</div>
-    {
-        product.map(e => <div>{e.title}</div>)
-    }
+    {/* {
+        product.map(e => <div>{e.category}</div>)
+    } */}
     </>
   )
 }

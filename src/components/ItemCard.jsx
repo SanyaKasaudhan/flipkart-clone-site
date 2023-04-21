@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import { ALL_PRODUCT_API } from '../constants';
+import Phone from './Phone';
 
 const ItemCard = () => {
     
@@ -17,9 +18,7 @@ const ItemCard = () => {
       console.log("pr",product)
   return (<>
     <div className='flex flex-row flex-wrap'>
-    {
-        product.map(e => <div></div>)
-    }
+   <Phone />
     {
         product.map((e,i) =>( 
         <Link index={i} to={"/product/"+e.id}><div className='shadow-lg w-60 h-40 mx-10 my-5 justify-center'>
