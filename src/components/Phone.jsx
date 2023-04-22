@@ -1,12 +1,15 @@
 import React, {useState, useEffect} from "react";
-import { PHONE_API } from "../constants";
+import { useParams } from "react-router-dom";
+import { PHONE_API, SINGLE_PRODUCT_API } from "../constants";
 
 const Phone = () => {
 
+  const {category}= useParams();
+  console.log("cate",category)
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
-        fetch(PHONE_API)
+        fetch(SINGLE_PRODUCT_API)
           .then((response) => response.json())
           .then((res) => setProduct(res.products))
           .catch((err) => console.log(err));

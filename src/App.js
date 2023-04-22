@@ -8,6 +8,7 @@ import Cart from './components/Cart';
 import ItemCard from './components/ItemCard';
 import ItemCardNavigate from './components/ItemCardNavigate';
 import Navbar from './components/Navbar';
+import Phone from './components/Phone';
 
 
 const appRouter = createBrowserRouter([
@@ -22,6 +23,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/product",
     element: <ItemCard />
+  },
+  {
+    path: "/product/:category",
+    element: <Phone />
   },
   {
     path: "/product/:id",

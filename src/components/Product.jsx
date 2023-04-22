@@ -12,7 +12,7 @@ const Product = () => {
           .catch((err) => console.log(err));
       }, []);
 //smartphones laptops fragrances skincare motorcycle sunglasses automotive lighting 
-// womens-bags womens-jewellery
+// womens-bags womens-jewellery 
 
       console.log("pr",product)
   return (<>
