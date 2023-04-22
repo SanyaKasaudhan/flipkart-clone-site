@@ -7,24 +7,26 @@ import offer from "../assets/offer.jpg";
 import tv from "../assets/tv.jpg";
 import furniture from "../assets/furniture.jpg";
 import grocery from "../assets/grocery.jpg";
+import { Link, useParams } from "react-router-dom";
 
 const Categories = () => {
-  const cateogryImg = [    
+  const {cat}=useParams();
+  const cateogryImg = [  
+    mobile,  
     offer,
     beauty,
     clothing,
     electronics,
-    mobile,
     tv,
     furniture,
     grocery,
   ];
-  const cateogryTitle = [    
+  const cateogryTitle = [  
+    "smartphones",  
     "Offer",
     "Beauty",
     "Clothing",
     "Electronics",
-    "Mobile",
     "Tv",
     "Furniture",
     "Grocery",
@@ -33,12 +35,15 @@ const Categories = () => {
   return (
     <div className="border-b-gray-500 h-32 shadow-lg">
       <div className="ml-28 flex flex-row">
+        
         {cateogryImg.map((e) => (
+          <Link to="/cart">
           <img
             alt="offers"
             className="mt-2 min-w-20 max-w-20 ml-10 h-20 rounded-full shadow-md"
             src={e}
-          />
+          />          
+        </Link>
         ))}
       </div>
       <div className="ml-24 flex flex-row">

@@ -21,7 +21,7 @@ const ItemCard = () => {
    <Phone />
     {
         product.map((e,i) =>( 
-        <Link index={i} to={"/product/"+e.id}><div className='shadow-lg w-60 h-40 mx-10 my-5 justify-center'>
+        <Link index={i} to={"/product/"+e.category}><div className='shadow-lg w-60 h-40 mx-10 my-5 justify-center'>
             <div className='flex space-x-32'><img className='w-20 h-20' alt="photo" src={e.thumbnail}/>
             <span className='content-end'><img className='w-6 h-6' src="https://cdn-icons-png.flaticon.com/512/25/25424.png" alt="wishlist"/></span></div>
             <div className='font-bold'>{e.title}</div>
