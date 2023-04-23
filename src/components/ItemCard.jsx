@@ -18,7 +18,7 @@ const ItemCard = () => {
       console.log("pr",product)
   return (<>
     <div className='flex flex-row flex-wrap'>
-   <Phone />
+   
     {
         product.map((e,i) =>( 
         <Link index={i} to={"/product/"+e.category}><div className='shadow-lg w-60 h-40 mx-10 my-5 justify-center'>
