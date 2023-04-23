@@ -11,8 +11,7 @@ const ItemCardNavigate = () => {
     if(!product)
         return <>Loading.....</>
   return (
-    <div className=''>
-        
+    <div className=''>        
         
         <div className='pl-[445px] pt-20 text-4xl font-bold'>{product.brand}  {product.category.toUpperCase()}</div>
         <div className='relative flex ml-40 mr-52 mt-2'>

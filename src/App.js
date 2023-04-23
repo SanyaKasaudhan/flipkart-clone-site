@@ -29,14 +29,16 @@ const appRouter = createBrowserRouter([
     element: <Phone />
   },
   {
-    path: "/product/:id",
+    path: "/products/:id",
     element: <ItemCardNavigate />
   }
 ])
 function App() {
   return (
     <div className="">
-      <RouterProvider router={appRouter} />
+      <RouterProvider router={appRouter} >
+        <Navbar />
+        </RouterProvider>
     </div>
   );
 }

@@ -53,6 +53,7 @@ const Categories = () => {
   return (
     <div className="border-b-gray-500 h-32 shadow-lg">
       <div className="ml-28 flex flex-row">
+        
         {cateogryImg.map((e, i) => (
            <img
               alt="offers"
