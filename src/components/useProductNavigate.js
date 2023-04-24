@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import { SINGLE_PRODUCT_API } from '../constants'
+import React, { useEffect, useState } from "react";
+import { SINGLE_PRODUCT_API } from "../constants";
 
 const useProductNavigate = (id) => {
-   
-    const [ product, setProduct]= useState(null);
-   useEffect(()=>{
-   getData();
-   },[])
+  const [product, setProduct] = useState(null);
+  useEffect(() => {
+    getData();
+  }, []);
 
-   async function getData(){
-    const data= await fetch(SINGLE_PRODUCT_API+id)
+  async function getData() {
+    const data = await fetch(SINGLE_PRODUCT_API + id);
     const json = await data.json().then((json) => setProduct(json));
-    
-   }
-  return product
-}
+  }
+  return product;
+};
 
-export default useProductNavigate
+export default useProductNavigate;
