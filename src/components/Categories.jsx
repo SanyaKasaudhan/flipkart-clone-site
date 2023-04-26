@@ -20,20 +20,9 @@ const Categories = () => {
     grocery,
     furniture,
   ];
-  const cateogryTitle = [
-    "smartphones",
-    
-    "Tv",
-    "Offer",
-    "skincare",
-    "Clothing",
-    "Electronics",
-    "Furniture",
-    "Grocery",
-  ];
 
   
-  const [products, setProducts] = useState([]);
+  // const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
