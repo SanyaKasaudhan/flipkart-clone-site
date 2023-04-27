@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import {useDispatch} from "react-redux"
 import { CATEGORY_API, PHONE_API, SINGLE_PRODUCT_API } from "../constants";
+import { addItem } from "../utils/cartSlice";
 
 const Phone = () => {
   const { category } = useParams();
   const [product, setProduct] = useState([]);
 
+   const dispatch= useDispatch();
+
+   const addToCart =(item)=>{
+     dispatch(addItem(item))
+   }
   useEffect(() => {
     fetch(CATEGORY_API + category)
       .then((response) => response.json())
@@ -66,6 +73,9 @@ const Phone = () => {
                   <div className="text-lg text-red-600 font-medium">
                     Hurry only {product.stock} left
                   </div>
+                  <button className="bg-blue-500 p-2 rounded-lg text-white"
+                  onClick={() =>addToCart(product)}
+                   >Add To Cart</button>
                 </div>
               </div>
             </>

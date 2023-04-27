@@ -34,11 +34,14 @@ const appRouter = createBrowserRouter([
 function App() {
   return (
     <div className="">
+      <Provider store={store}>
       <RouterProvider router={appRouter}>
-        <Provider store={store}>
-        <Navbar />
-        </Provider>
+        
+          {console.log("store", store.getState())}
+          <Navbar />
+        
       </RouterProvider>
+      </Provider>
     </div>
   );
 }
