@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Navbar = () => {
+const Header = () => {
   return (
     <div className='h-16 pt-3 w-full flex flex-row space-x-40 bg-blue-500'>        
             <div className='flex flex-row'>
@@ -22,5 +22,4 @@ const Navbar = () => {
   )
 }
 
-
-export default Navbar
+export default Header

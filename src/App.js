@@ -9,6 +9,7 @@ import ItemCardNavigate from "./components/ItemCardNavigate";
 import Navbar from "./components/Navbar";
 import Phone from "./components/Phone";
 import store from "./utils/store";
+import Header from "./components/Header";
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -35,12 +36,8 @@ function App() {
   return (
     <div className="">
       <Provider store={store}>
-      <RouterProvider router={appRouter}>
-        
-          {console.log("store", store.getState())}
-          <Navbar />
-        
-      </RouterProvider>
+        <Navbar />
+        <RouterProvider router={appRouter}></RouterProvider>
       </Provider>
     </div>
   );

@@ -7,11 +7,11 @@ import OfferCarousel from './OfferCarousel';
 
 const HomePage = () => {
   return (
-    <div>
-      <Navbar />
+    <div>      
       <Categories />
       <OfferCarousel />
       <ItemCard />
+      
     </div>
   )
 }
