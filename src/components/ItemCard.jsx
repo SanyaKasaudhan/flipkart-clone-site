@@ -2,15 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ALL_PRODUCT_API } from "../constants";
 import Phone from "./Phone";
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux";
 import { addToWishList } from "../utils/saveSlice";
+import {useSelector} from "react-redux"
 const ItemCard = () => {
   const [product, setProduct] = useState([]);
-
+  const cartItems = useSelector((store) => store.save.savedItems)
+  console.log("wishhh",cartItems)
   const dispatch = useDispatch();
-  const saveToWishList =(items) =>{
+  const saveToWishList = (items) => {
     dispatch(addToWishList(items));
-  }
+  };
   useEffect(() => {
     fetch(ALL_PRODUCT_API)
       .then((response) => response.json())
@@ -18,11 +20,11 @@ const ItemCard = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log("pr", product);
+  // console.log("pr", product);
   return (
     <>
       <div className="flex flex-row flex-wrap mt-5">
-        {product.map((e, i) => (
+        {product.map((e, i) => (<>
           <Link index={i} to={"/products/" + e.id}>
             <div className="flex flex-col items-center justify-center shadow-lg shadow-red-500/40 w-72 h-52 mx-10 my-10">
               <div className="flex items-center justify-between w-full h-20 px-5">
@@ -31,11 +33,7 @@ const ItemCard = () => {
                   alt="product_img"
                   src={e.thumbnail}
                 />
-                <img
-                  className="w-8 h-8"
-                  src="https://cdn-icons-png.flaticon.com/512/25/25424.png"
-                  alt="wishlist" onClick={()=> saveToWishList(e)}
-                />
+                
               </div>
               <div className="mt-8 w-full h-8 font-bold text-center">
                 {e.title.split(" ").slice(0, 3).join(" ")}
@@ -48,6 +46,14 @@ const ItemCard = () => {
               </div>
             </div>
           </Link>
+          <img
+                  className="w-8 h-8"
+                  src="https://cdn-icons-png.flaticon.com/512/25/25424.png"
+                  alt="wishlist"
+                 
+                />
+                <button className="bg-red-700"  onClick={() => saveToWishList(e)}>Wishlist</button>
+          </>
         ))}
       </div>
     </>

@@ -14,33 +14,49 @@ import Wishlist from "./components/WishList";
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: (
+      <>
+        <Navbar />
+        <HomePage />
+      </>
+    ),
   },
   {
     path: "/cart",
-    element: <Cart />,
-  },{
+    element: <><Navbar />
+    <Cart />
+    </>
+  },
+
+  {
     path: "/wishlist",
-    element: <Wishlist />,
+    element: <><Navbar />
+    <Wishlist />
+    </>,
   },
   {
     path: "/product",
-    element: <ItemCard />,
+    element: <><Navbar />
+    <ItemCard />
+    </>,
   },
   {
     path: "/product/:category",
-    element: <Phone />,
+    element: <><Navbar />
+    <Phone />
+    </>
   },
   {
     path: "/products/:id",
-    element: <ItemCardNavigate />,
+    element:<><Navbar />
+    <ItemCardNavigate />
+    </>
   },
 ]);
 function App() {
   return (
     <div className="">
       <Provider store={store}>
-        <Navbar />
         <RouterProvider router={appRouter}></RouterProvider>
       </Provider>
     </div>
