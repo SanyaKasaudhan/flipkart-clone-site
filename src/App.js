@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Phone from "./components/Phone";
 import store from "./utils/store";
 import Header from "./components/Header";
+import Wishlist from "./components/WishList";
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -18,6 +19,9 @@ const appRouter = createBrowserRouter([
   {
     path: "/cart",
     element: <Cart />,
+  },{
+    path: "/wishlist",
+    element: <Wishlist />,
   },
   {
     path: "/product",

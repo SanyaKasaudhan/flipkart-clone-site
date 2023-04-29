@@ -15,9 +15,9 @@ const Navbar = () => {
             </div>
             </div>
             <div className='flex flex-row space-x-20 pt-2 text-white font-bold text-lg '>
-            <div> HOME {cartItems.length}</div>
+            <div> HOME </div>
             <div> Become a Seller</div>
-            <div> Wishlist </div>
+            <a href="/wishlist"> Wishlist </a>
             <a href="/cart"><div> Cart ({cartItems.length} items)</div></a>
             </div>
     </div>

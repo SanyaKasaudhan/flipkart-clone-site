@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { ALL_PRODUCT_API } from "../constants";
 import Phone from "./Phone";
 import {useDispatch} from "react-redux"
+import { addToWishList } from "../utils/saveSlice";
 const ItemCard = () => {
   const [product, setProduct] = useState([]);
 
   const dispatch = useDispatch();
-  const saveToWishList =() =>{
-
+  const saveToWishList =(items) =>{
+    dispatch(addToWishList(items));
   }
   useEffect(() => {
     fetch(ALL_PRODUCT_API)
@@ -33,7 +34,7 @@ const ItemCard = () => {
                 <img
                   className="w-8 h-8"
                   src="https://cdn-icons-png.flaticon.com/512/25/25424.png"
-                  alt="wishlist" onClick={()=> saveToWishList()}
+                  alt="wishlist" onClick={()=> saveToWishList(e)}
                 />
               </div>
               <div className="mt-8 w-full h-8 font-bold text-center">
