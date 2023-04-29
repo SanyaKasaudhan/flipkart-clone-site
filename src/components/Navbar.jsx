@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import {useSelector} from "react-redux"
+import store from '../utils/store'
 const Navbar = () => {
+  const cartItems = useSelector((store)=> store.cart.items)
   return (
     <div className='h-16 pt-3 w-full flex flex-row space-x-40 bg-blue-500'>        
             <div className='flex flex-row'>
@@ -13,10 +15,10 @@ const Navbar = () => {
             </div>
             </div>
             <div className='flex flex-row space-x-20 pt-2 text-white font-bold text-lg '>
-            <div> SANYA </div>
+            <div> HOME {cartItems.length}</div>
             <div> Become a Seller</div>
-            <div> More </div>
-            <a href="/cart"><div> Cart </div></a>
+            <div> Wishlist </div>
+            <a href="/cart"><div> Cart ({cartItems.length} items)</div></a>
             </div>
     </div>
   )

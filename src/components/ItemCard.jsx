@@ -2,10 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ALL_PRODUCT_API } from "../constants";
 import Phone from "./Phone";
-
+import {useDispatch} from "react-redux"
 const ItemCard = () => {
   const [product, setProduct] = useState([]);
 
+  const dispatch = useDispatch();
+  const saveToWishList =() =>{
+
+  }
   useEffect(() => {
     fetch(ALL_PRODUCT_API)
       .then((response) => response.json())
@@ -29,7 +33,7 @@ const ItemCard = () => {
                 <img
                   className="w-8 h-8"
                   src="https://cdn-icons-png.flaticon.com/512/25/25424.png"
-                  alt="wishlist"
+                  alt="wishlist" onClick={()=> saveToWishList()}
                 />
               </div>
               <div className="mt-8 w-full h-8 font-bold text-center">
