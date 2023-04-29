@@ -7,10 +7,13 @@ import { addToWishList } from "../utils/saveSlice";
 import {useSelector} from "react-redux"
 const ItemCard = () => {
   const [product, setProduct] = useState([]);
+  const [wishlist, setWishlist] = useState(false);
   const cartItems = useSelector((store) => store.save.savedItems)
   console.log("wishhh",cartItems)
   const dispatch = useDispatch();
   const saveToWishList = (items) => {
+    setWishlist(!wishlist);
+    
     dispatch(addToWishList(items));
   };
   useEffect(() => {
@@ -23,13 +26,13 @@ const ItemCard = () => {
   // console.log("pr", product);
   return (
     <>
-      <div className="flex flex-row flex-wrap mt-5">
-        {product.map((e, i) => (<>
+      <div className="flex flex-row flex-wrap h-80 mt-5 mt-5 h-52 m-3">
+        {product.map((e, i) => (<div className="shadow  shadow-amber-600 m-3">
           <Link index={i} to={"/products/" + e.id}>
-            <div className="flex flex-col items-center justify-center shadow-lg shadow-red-500/40 w-72 h-52 mx-10 my-10">
-              <div className="flex items-center justify-between w-full h-20 px-5">
+            <div className="flex flex-col items-center justify-center ">
+              <div className="flex items-center justify-between px-5">
                 <img
-                  className="w-44 h-32"
+                  className="w-44 max-h-28"
                   alt="product_img"
                   src={e.thumbnail}
                 />
@@ -46,14 +49,12 @@ const ItemCard = () => {
               </div>
             </div>
           </Link>
-          <img
-                  className="w-8 h-8"
-                  src="https://cdn-icons-png.flaticon.com/512/25/25424.png"
-                  alt="wishlist"
-                 
-                />
-                <button className="bg-red-700"  onClick={() => saveToWishList(e)}>Wishlist</button>
-          </>
+          
+          {wishlist? <button className="bg-red-500 max-h-10"  onClick={() => saveToWishList(e)}>Wishlist</button>
+          :
+          <button className="bg-yellow-300 max-h-10"  onClick={() => saveToWishList(e)}>Wishlist</button>
+          }
+          </div>
         ))}
       </div>
     </>

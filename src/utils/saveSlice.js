@@ -7,7 +7,9 @@ const saveSlice= createSlice({
     },
     reducers:{
         addToWishList: (state, action) =>{
-            state.savedItems.push(action.payload)
+            if (state.savedItems.indexOf(action.payload) == -1)
+             state.savedItems.push(action.payload);
+            // state.savedItems.push(action.payload)
         }
        
     }

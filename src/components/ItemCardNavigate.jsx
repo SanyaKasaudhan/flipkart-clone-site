@@ -1,16 +1,15 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useProductNavigate from "./useProductNavigate";
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
 const ItemCardNavigate = () => {
   const { id } = useParams();
   console.log("id", id);
-  const dispatch=useDispatch();
-  const addToCart = (item)=>{
+  const dispatch = useDispatch();
+  const addToCart = (item) => {
     dispatch(addItem(item));
-
-  }
+  };
 
   const product = useProductNavigate(id);
   console.log("prod", product);
@@ -62,9 +61,12 @@ const ItemCardNavigate = () => {
           <div className="text-lg text-red-600 font-medium">
             Hurry only {product.stock} left
           </div>
-          <button className="bg-blue-500 p-2 rounded-lg text-white"
-                  onClick={() =>addToCart(product)}
-                   >Add To Cart</button>
+          <button
+            className="bg-blue-500 p-2 rounded-lg text-white"
+            onClick={() => addToCart(product)}
+          >
+            Add To Cart
+          </button>
         </div>
       </div>
     </div>
