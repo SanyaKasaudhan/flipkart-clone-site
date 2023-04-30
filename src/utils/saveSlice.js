@@ -6,12 +6,16 @@ const saveSlice= createSlice({
         savedItems:[]
     },
     reducers:{
-        addToWishList: (state, action) =>{
-            if (state.savedItems.indexOf(action.payload) == -1)
-             state.savedItems.push(action.payload);
-            // state.savedItems.push(action.payload)
-        }
-       
+        addToWishList: (state, action) => {
+            const itemExists = state.savedItems.some(item => item.id === action.payload.id);
+            if (!itemExists) {
+              return {
+                ...state,
+                savedItems: [...state.savedItems, action.payload],
+              };
+            }
+            return state;
+          }
     }
 })
 

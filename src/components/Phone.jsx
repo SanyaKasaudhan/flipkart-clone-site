@@ -25,23 +25,23 @@ const Phone = () => {
       {
         <div className="flex flex-wrap">
           {product.map((product, i) => (
-            <>
+            <div className="shadow shadow-sky-700 h-[550px] w-full">
               <div className="pl-[445px] pt-20 text-4xl font-bold">
                 {product.brand} {product.category.toUpperCase()}
               </div>
               <div className="relative flex ml-40 mr-52 mt-2">
-                <div className="flex-col h-10 w-20 mr-5">
+                <div className="flex-col h-10 w-20 mr-5 mt-[-50px]">
                   {product.images.map((e) => (
                     <img
-                      className="border-2 border-gray-950 m-2"
-                      src={e}
+                      className="object-cover w-20 h-20 border-2 border-gray-950 m-2"
+                      src={e.slice(0, 3)}
                       alt="imgthumbnail"
                     />
                   ))}
                 </div>
                 <div className=" flex-row">
                   <img
-                    className="shadow-2xl"
+                    className="shadow-2xl object-cover w-80 h-80 "
                     src={product.thumbnail}
                     alt="product_img"
                   />
@@ -78,7 +78,7 @@ const Phone = () => {
                    >Add To Cart</button>
                 </div>
               </div>
-            </>
+            </div>
           ))}
         </div>
       }
