@@ -34,7 +34,7 @@ const ItemCard = () => {
     <>
       <div className="flex flex-row flex-wrap h-60 mt-5 mb-15 m-3">
         {product.map((e, i) => (
-          <div className="shadow  shadow-amber-600 m-3 flex flex-col w-72 h-72 ">
+          <div className="shadow  shadow-amber-600 m-3 flex flex-col w-72 h-80 mx-auto">
             <Link index={i} to={"/products/" + e.id}>
               <div className="flex flex-col items-center justify-center h-4/5">
                 <div className="flex items-center justify-between px-5 w-full">

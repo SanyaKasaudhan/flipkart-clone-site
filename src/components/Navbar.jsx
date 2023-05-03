@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import {useSelector} from "react-redux"
 import store from '../utils/store'
@@ -6,6 +6,7 @@ const Navbar = () => {
   const cartItems = useSelector((store)=> store.cart.items)
    const wishListItem = useSelector((store) => store.save.savedItems)
 
+   const [login, setLogin] = useState(false);
   return (
     <div className='h-16 pt-3 w-full flex flex-row space-x-40 bg-blue-500'>        
             <div className='flex flex-row'>
@@ -20,7 +21,7 @@ const Navbar = () => {
             <Link to="/">Home</Link>
             <Link to="/wishlist"> Wishlist ({wishListItem.length} items)</Link>
             <Link to="/cart"><div> Cart ({cartItems.length} items)</div></Link>
-            <div>Logout</div>
+            <button className='mt-[-15px]' onClick={()=> {setLogin(!login)}}>{login? "Login": "Logout"}</button>
             </div>
     </div>
   )
