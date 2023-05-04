@@ -62,7 +62,7 @@ const ItemCard = () => {
               }`}
               onClick={() => saveToWishList(e)}
             >
-              Wishlist
+              Wishlist 🧡
             </button>
             </div>
           </div>
