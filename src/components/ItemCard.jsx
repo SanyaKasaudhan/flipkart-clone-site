@@ -55,14 +55,14 @@ const ItemCard = () => {
                 </div>
               </div>
             </Link>
-            <div className="flex justify-center h-1/5">
+            <div className="flex flex-row justify-center h-1/5">
             <button
               className={`max-h-10 px-2 rounded-lg mb-2 ${
-                wishlist.includes(e.id) ? "bg-red-500" : "bg-yellow-300"
+                wishlist.includes(e.id) ? "bg-red-300" : "bg-yellow-300"
               }`}
               onClick={() => saveToWishList(e)}
             >
-              Wishlist 🧡
+               🧡
             </button>
             </div>
           </div>
