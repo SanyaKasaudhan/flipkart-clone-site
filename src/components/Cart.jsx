@@ -9,7 +9,7 @@ const Cart = () => {
   };
   const removeCartItem = (item) => {
     dispatch(removeItem(item));
-    console.log("items",cartItems)
+    console.log("items", cartItems);
   };
   console.log("cartItems", cartItems);
   return (
@@ -29,22 +29,30 @@ const Cart = () => {
           </button>
           <div className="flex">
             <div className="flex-row">
-              {cartItems.map((item, index) => (
-                <div className="flex">
-                  <div className="flex-row w-96 p-2 m-2 shadow-lg bg-pink-50 ">
+              {cartItems.map((item, index) => (<>
+                 {/* <div className="flex-row w-96 p-2 m-2 shadow-lg bg-pink-50 mb-5">
                     <img alt="productImg" src={item.thumbnail} />
                     <h2 className="font-bold text-xl">{item.title}</h2>
                     <h3>{item.discountPercentage}</h3>
                     <div>{item.rating}</div>
                     <h4>Rupees: {item.price}</h4>
+                  </div> */}
+                  <div className="flex">    <img alt="productImg" src={item.thumbnail} />
+                               
+                  <div className="flex-row w-96 p-2 m-2 shadow-lg bg-pink-50 mb-5">
+                    <h2 className="font-bold text-xl">{item.title}</h2>
+                    <h3> Price - {item.discountPercentage}</h3>
+                    <div>{item.rating}</div>
+                    <h4>Price: {item.price}</h4>
+                    <button
+                      className="bg-blue-500 h-28 p-2 m-3 mb-5 rounded-lg text-white"
+                      onClick={() => removeCartItem(item)}
+                    >
+                      Delete Cart
+                    </button>
                   </div>
-                  <button
-                    className="bg-blue-500 p-2 rounded-lg text-white"
-                    onClick={() => removeCartItem(item)}
-                  >
-                    Delete Cart
-                  </button>
                 </div>
+              </>
               ))}
             </div>
           </div>
